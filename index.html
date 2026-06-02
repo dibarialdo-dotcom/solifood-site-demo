@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700;800&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=20260602-nav-pills" />
+  <link rel="stylesheet" href="styles.css?v=20260602-partner-links" />
 </head>
 <body>
   <header class="site-header">
@@ -194,13 +194,13 @@
       <div class="container">
         <p class="section-title">Partenaires</p>
         <div class="partner-logos partner-logos-main">
-          <figure class="partner-main-item">
+          <figure class="partner-main-item" data-external-link>
             <a href="https://croix-rouge.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la Croix-Rouge de Belgique">
               <img src="logo-croix-rouge.png" alt="Croix-Rouge de Belgique" class="cr-logo-main" />
             </a>
             <figcaption>Initiateur</figcaption>
           </figure>
-          <figure class="partner-main-item">
+          <figure class="partner-main-item" data-external-link>
             <a href="https://www.fdss.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la FdSS">
               <img src="logo-fdss.jpg" alt="FdSS" class="fdss-logo-main" />
             </a>
@@ -209,12 +209,12 @@
         </div>
         <p class="section-title partner-support-title">Avec le soutien de nos Partenaires publics et privés engagés dans l'aide alimentaire</p>
         <div class="partner-logo-grid">
-          <figure class="partner-logo-item"><a href="https://environnement.brussels/" target="_blank" rel="noopener" aria-label="Ouvrir le site de Bruxelles Environnement"><img src="logo-bruxelles-environnement.jpg" alt="Bruxelles Environnement"></a></figure>
-          <figure class="partner-logo-item"><a href="https://be.brussels/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la Région de Bruxelles-Capitale"><img src="logo-region-bruxelles-capitale.jpg" alt="Région Bruxelles-Capitale"></a></figure>
-          <figure class="partner-logo-item"><a href="https://www.mi-is.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site du SPP Intégration sociale"><img src="logo-spp.jpg" alt="SPP Intégration sociale"></a></figure>
-          <figure class="partner-logo-item"><a href="https://www.wallonie.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la Wallonie"><img src="logo-wallonie.jpg" alt="Wallonie"></a></figure>
-          <figure class="partner-logo-item"><a href="https://www.loterie-nationale.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la Loterie Nationale"><img src="logo-loterie-nationale.jpg" alt="Loterie Nationale"></a></figure>
-          <figure class="partner-logo-item"><a href="https://www.level-it.be/fr/" target="_blank" rel="noopener" aria-label="Ouvrir le site de Level IT"><img src="logo-level-it.jpg" alt="Level IT"></a></figure>
+          <figure class="partner-logo-item" data-external-link><a href="https://environnement.brussels/" target="_blank" rel="noopener" aria-label="Ouvrir le site de Bruxelles Environnement"><img src="logo-bruxelles-environnement.jpg" alt="Bruxelles Environnement"></a></figure>
+          <figure class="partner-logo-item" data-external-link><a href="https://be.brussels/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la Région de Bruxelles-Capitale"><img src="logo-region-bruxelles-capitale.jpg" alt="Région Bruxelles-Capitale"></a></figure>
+          <figure class="partner-logo-item" data-external-link><a href="https://www.mi-is.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site du SPP Intégration sociale"><img src="logo-spp.jpg" alt="SPP Intégration sociale"></a></figure>
+          <figure class="partner-logo-item" data-external-link><a href="https://www.wallonie.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la Wallonie"><img src="logo-wallonie.jpg" alt="Wallonie"></a></figure>
+          <figure class="partner-logo-item" data-external-link><a href="https://www.loterie-nationale.be/" target="_blank" rel="noopener" aria-label="Ouvrir le site de la Loterie Nationale"><img src="logo-loterie-nationale.jpg" alt="Loterie Nationale"></a></figure>
+          <figure class="partner-logo-item" data-external-link><a href="https://www.level-it.be/fr/" target="_blank" rel="noopener" aria-label="Ouvrir le site de Level IT"><img src="logo-level-it.jpg" alt="Level IT"></a></figure>
         </div>
       </div>
     </section>
@@ -297,6 +297,14 @@
   </section>
 
   <script>
+    document.querySelectorAll("[data-external-link]").forEach((card) => {
+      card.addEventListener("click", (event) => {
+        if (event.target.closest("a")) return;
+        const link = card.querySelector("a[href]");
+        if (link) window.open(link.href, "_blank", "noopener");
+      });
+    });
+
     const chatToggle = document.getElementById("chatToggle");
     const chat = document.getElementById("chatbot");
     const chatClose = document.getElementById("chatClose");
