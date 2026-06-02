@@ -1,0 +1,6 @@
+tools/node/
+tools/node.zip
+serve_*.out.log
+serve_*.err.log
+.DS_Store
+Thumbs.db
