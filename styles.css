@@ -35,6 +35,10 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 12px;
 }
+.brand a {
+  display: inline-flex;
+  align-items: center;
+}
 .brand-logo { height: 96px; width: auto; display: block; filter: drop-shadow(0 8px 20px rgba(0,0,0,.08)); }
 .brand-logo-cr {
   height: 96px;
@@ -387,6 +391,22 @@ cite {
   display: grid;
   place-items: center;
   text-align: center;
+}
+.partner-main-item a,
+.partner-logo-item a {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transition: transform .18s ease, filter .18s ease;
+}
+.partner-main-item a:hover,
+.partner-main-item a:focus-visible,
+.partner-logo-item a:hover,
+.partner-logo-item a:focus-visible {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 10px 16px rgba(23,89,69,.14));
 }
 .partner-main-item figcaption {
   margin-top: 6px;
