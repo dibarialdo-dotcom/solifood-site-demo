@@ -9,6 +9,7 @@
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; }
+html { scroll-behavior: smooth; }
 body {
   font-family: "Barlow", system-ui, sans-serif;
   color: var(--ink);
@@ -99,6 +100,7 @@ h1 { margin: 0; font-family: "Space Grotesk", sans-serif; font-size: clamp(2rem,
 .route-b { width: 86%; height: 86%; left: -30%; bottom: -28%; opacity: .45; }
 
 .section { padding: 32px 0; }
+section[id] { scroll-margin-top: 132px; }
 .section-title {
   margin: 0 0 10px;
   text-transform: uppercase;
