@@ -445,6 +445,9 @@ cite {
 
 @media (max-width: 920px) {
   .hero-grid, .impact-grid, .flow-grid, .split, .adv-grid, .price-wrap, .testi-grid, .contact-wrap, .photo-grid, .families-grid, .families-head { grid-template-columns: 1fr; }
+  .families-grid .family-card:nth-child(5),
+  .families-grid .family-card:nth-child(6),
+  .families-grid .family-card:nth-child(7) { grid-column: auto; }
   .partner-logo-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .partner-logo-grid .partner-logo-item:nth-child(5),
   .partner-logo-grid .partner-logo-item:nth-child(6) { grid-column: auto; }
