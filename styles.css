@@ -451,8 +451,23 @@ section[id] { scroll-margin-top: 158px; }
 }
 .price-wrap h2 { margin: 0 0 8px; font-family: "Space Grotesk", sans-serif; }
 .price-wrap p { margin: 0; opacity: .95; }
-.discount-box { background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3); border-radius: 22px; padding: 18px; font-size: 1.15rem; font-weight: 700; }
+.discount-box {
+  display: grid;
+  gap: 6px;
+  text-align: center;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 22px;
+  padding: 18px;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
 .discount-box strong { font-size: inherit; }
+.discount-box span {
+  font-size: .95rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.86);
+}
 
 .video-card {
   padding: 10px;
