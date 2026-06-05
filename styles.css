@@ -163,6 +163,44 @@ section[id] { scroll-margin-top: 158px; }
 .flow { background: linear-gradient(180deg, #f7fbf5, #ecf4ef); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 .flow-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .flow .section-title { text-align: center; }
+.flow-visual-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.flow-visual-card {
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 10%, rgba(127,197,58,.16), transparent 24%),
+    linear-gradient(180deg, #fff, #f8fcf9);
+}
+.flow-visual-copy {
+  text-align: center;
+}
+.flow-visual-copy h3 {
+  margin: 0 0 6px;
+  font-family: "Space Grotesk", sans-serif;
+  color: var(--green-deep);
+}
+.flow-visual-copy p {
+  margin: 0 auto;
+  max-width: 48ch;
+  color: var(--muted);
+}
+.flow-visual-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  display: block;
+  border-radius: 18px;
+  background: rgba(238,243,239,.62);
+  border: 1px solid rgba(212,221,215,.72);
+  padding: 10px;
+}
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-items: start; }
 .split h2 { margin: 0; font-family: "Space Grotesk", sans-serif; font-size: clamp(1.5rem, 3vw, 2.2rem); max-width: 18ch; }
 #concept > div:first-child {
@@ -492,7 +530,7 @@ cite {
 .footer-wrap nav a { color: var(--muted); font-weight: 600; }
 
 @media (max-width: 920px) {
-  .hero-grid, .impact-grid, .flow-grid, .split, .adv-grid, .price-wrap, .testi-grid, .contact-wrap, .photo-grid, .families-grid, .families-head { grid-template-columns: 1fr; }
+  .hero-grid, .impact-grid, .flow-grid, .flow-visual-grid, .split, .adv-grid, .price-wrap, .testi-grid, .contact-wrap, .photo-grid, .families-grid, .families-head { grid-template-columns: 1fr; }
   .families-grid .family-card:nth-child(5),
   .families-grid .family-card:nth-child(6),
   .families-grid .family-card:nth-child(7) { grid-column: auto; }
@@ -513,6 +551,7 @@ cite {
   .concept-card { min-height: auto; grid-template-columns: 1fr; gap: 10px; }
   .concept-icon { width: 130px; }
   .concept-card p { font-size: 1.06rem; }
+  .flow-visual-card img { height: auto; max-height: 330px; }
   .contact-logo { width: min(100%, 420px); margin-top: 20px; margin-left: 0; }
   .catalogue-cover { width: 100%; height: auto; max-width: 180px; }
 }
