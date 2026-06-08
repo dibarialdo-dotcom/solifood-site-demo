@@ -385,9 +385,9 @@ section[id] { scroll-margin-top: 158px; }
 .concept-section {
   position: relative;
   overflow: hidden;
-  padding: 74px 0;
+  padding: 82px 0;
   background:
-    radial-gradient(circle at 0 55%, rgba(127,197,58,.14), transparent 28%),
+    radial-gradient(circle at -4% 56%, rgba(127,197,58,.16), transparent 24%),
     linear-gradient(180deg, #f9fcfa, #edf5f0);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -395,48 +395,49 @@ section[id] { scroll-margin-top: 158px; }
 .concept-section::before {
   content: "";
   position: absolute;
-  left: -170px;
-  top: 7%;
-  width: 360px;
-  height: 720px;
-  opacity: .075;
+  left: -190px;
+  top: 10%;
+  width: 420px;
+  height: 680px;
+  opacity: .07;
   background: url("logo-solifood-label-cutout.png") center / contain no-repeat;
-  transform: rotate(-8deg);
+  transform: rotate(-9deg);
   pointer-events: none;
 }
 .concept-wrap {
   position: relative;
+  width: min(1320px, calc(100% - 64px));
   display: grid;
-  grid-template-columns: minmax(360px, .9fr) minmax(560px, 1.1fr);
-  gap: 72px;
+  grid-template-columns: minmax(440px, .95fr) minmax(620px, 1.05fr);
+  gap: 86px;
   align-items: center;
-  min-height: 460px;
+  min-height: 455px;
 }
 .concept-heading .section-title {
   text-align: left;
 }
 .concept-mark {
   display: block;
-  width: 58px;
+  width: 56px;
   height: 4px;
-  margin: 22px 0 38px;
+  margin: 22px 0 40px;
   border-radius: 999px;
   background: var(--green-deep);
 }
 .concept-heading h2 {
   margin: 0;
-  max-width: 15ch;
+  max-width: 14.5ch;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(2.45rem, 4.25vw, 4rem);
-  line-height: 1.15;
+  font-size: clamp(2.75rem, 4vw, 4.05rem);
+  line-height: 1.16;
   letter-spacing: -.03em;
 }
 .concept-card {
-  min-height: 320px;
-  padding: 54px;
+  min-height: 315px;
+  padding: 52px 56px;
   display: grid;
-  grid-template-columns: 220px 1px 1fr;
-  gap: 44px;
+  grid-template-columns: 230px 1px minmax(0, 1fr);
+  gap: 38px;
   align-items: center;
   border-radius: 30px;
   box-shadow: 0 24px 48px rgba(23,89,69,.12);
@@ -447,11 +448,16 @@ section[id] { scroll-margin-top: 158px; }
   width: 170px;
   height: 170px;
   justify-self: center;
+  grid-column: 1;
+  grid-row: 1;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(127,197,58,.16), rgba(127,197,58,.05) 62%, transparent 63%);
 }
 .concept-card::before {
   content: "";
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
   width: 1px;
   height: 210px;
   background: var(--line);
@@ -463,6 +469,8 @@ section[id] { scroll-margin-top: 158px; }
   filter: drop-shadow(0 8px 18px rgba(23,89,69,.22));
 }
 .concept-card p {
+  grid-column: 3;
+  grid-row: 1;
   font-size: clamp(1.45rem, 1.85vw, 1.82rem);
   line-height: 1.52;
   color: #2a3a34;
@@ -810,10 +818,10 @@ cite {
   .concept-heading h2 { max-width: none; }
   .concept-mark { margin: 14px auto 22px; }
   .concept-card { min-height: auto; grid-template-columns: 1fr; gap: 18px; padding: 28px; }
-  .concept-card::before { width: 100%; height: 1px; order: 2; }
-  .concept-icon-wrap { width: 150px; height: 150px; }
+  .concept-card::before { grid-column: 1; grid-row: 2; width: 100%; height: 1px; order: 2; }
+  .concept-icon-wrap { grid-column: 1; grid-row: 1; width: 150px; height: 150px; }
   .concept-icon { width: 140px; }
-  .concept-card p { order: 3; font-size: 1.12rem; text-align: center; }
+  .concept-card p { grid-column: 1; grid-row: 3; order: 3; font-size: 1.12rem; text-align: center; }
   .logistic-chain,
   .weekly-benefits,
   .weekly-cycle {
